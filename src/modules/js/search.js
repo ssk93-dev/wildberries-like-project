@@ -1,7 +1,6 @@
 export const search = function () {
   const input = document.querySelector(".search-block > input");
   const searchBtn = document.querySelector(".search-block > button");
-  const allBtn = document.querySelector(".more");
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector(".long-goods-list");
@@ -52,10 +51,6 @@ export const search = function () {
     searchBtn.addEventListener("click", () => {
       getData(input.value);
     });
-    allBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      getData('');
-    })
   } catch (e) {
     console.error(e.message);
   }

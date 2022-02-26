@@ -1,5 +1,6 @@
 export const getGoods = () => {
   const links = document.querySelectorAll('.navigation-link');
+  const allBtn = document.querySelector(".more");
 
   const renderGoods = (goods) => {
     const goodsContainer = document.querySelector('.long-goods-list');
@@ -46,6 +47,13 @@ export const getGoods = () => {
 
   if (localStorage.getItem('goods') && window.location.pathname === '/wildberries-like-project/goods.html') {
     renderGoods(JSON.parse(localStorage.getItem('goods')));
+  }
+
+  if (allBtn) {
+    allBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      getData();
+    })
   }
 
 };
